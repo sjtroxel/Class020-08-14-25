@@ -1,0 +1,13 @@
+<div style="text-align:center">
+	<h1>Welcome to Pusher Chat App</h1>
+</div>
+<div>
+	@for (message of messages; track message.id) {
+	<p>{{ message.content }}</p>
+	}
+</div>
+<div>
+	<input type="text" [value]="newMessage()" (input)="newMessage.set($any($event.target).value)" />
+	<button (click)="sendMessage()">Send</button>
+</div>
+<router-outlet />
