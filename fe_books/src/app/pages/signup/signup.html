@@ -1,0 +1,21 @@
+<div class="container">
+	<form [formGroup]="signupForm" (ngSubmit)="signup()">
+		<div class="form-group">
+			<label for="username">Username:</label>
+			<input type="text" formControlName="username" />
+		</div>
+		<div class="form-group">
+			<label for="password">Password:</label>
+			<input type="password" formControlName="password" />
+		</div>
+		<div class="form-group">
+			<label for="password_confirmation">Confirm Password:</label>
+			<input type="password" formControlName="password_confirmation" />
+		</div>
+
+		@for (error of errors; track $index) {
+      		<p class="error">{{error}}</p>
+    }
+		<button type="submit" [disabled]="!signupForm.valid">Sign Up</button>
+	</form>
+</div>

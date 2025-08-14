@@ -1,0 +1,106 @@
+.books-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #0b1a3a, #13294d);
+  padding: 0.75rem 2rem;
+  box-shadow:
+    0 2px 10px rgba(51, 153, 255, 0.6),
+    inset 0 -3px 10px #3399ff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-family: 'Poppins', sans-serif;
+  user-select: none;
+
+  /* subtle animated glow pulse */
+  animation: navbarGlowPulse 6s ease-in-out infinite;
+}
+
+@keyframes navbarGlowPulse {
+  0%, 100% {
+    box-shadow:
+      0 2px 10px rgba(51, 153, 255, 0.6),
+      inset 0 -3px 10px #3399ff;
+  }
+  50% {
+    box-shadow:
+      0 4px 20px rgba(51, 153, 255, 0.9),
+      inset 0 -6px 20px #00d4ff;
+  }
+}
+
+.books-navbar .brand-name a {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #00d4ff;
+  text-decoration: none;
+  text-shadow:
+    0 0 8px #00d4ff,
+    0 0 20px #3399ff;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #3399ff;
+    text-shadow:
+      0 0 12px #3399ff,
+      0 0 30px #00d4ff;
+  }
+}
+
+.books-navbar .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.books-navbar .nav-links a,
+.books-navbar .nav-links button {
+  background: transparent;
+  border: 2px solid #00d4ff;
+  border-radius: 8px;
+  color: #00d4ff;
+  padding: 0.5rem 1.25rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow:
+    0 0 8px #00d4ff;
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.2s ease;
+  position: relative;
+
+  &:hover {
+    background-color: #00d4ff;
+    color: #13294d;
+    box-shadow:
+      0 0 18px #00d4ff,
+      0 0 30px #00d4ff;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Specific style for logout button for extra emphasis */
+.books-navbar .nav-links button {
+  font-weight: 700;
+  border-color: #ff4c4c;
+  color: #ff4c4c;
+  box-shadow:
+    0 0 8px #ff4c4c;
+
+  &:hover {
+    background-color: #ff4c4c;
+    color: #1a0a0a;
+    box-shadow:
+      0 0 18px #ff4c4c,
+      0 0 30px #ff1a1a;
+  }
+}

@@ -1,0 +1,99 @@
+form {
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 3rem 2.5rem;
+  background: linear-gradient(135deg, #0b1a3a, #13294d); /* much darker blues */
+  border-radius: 16px;
+  box-shadow:
+    0 0 30px rgba(10, 36, 74, 0.8),
+    0 8px 40px 0 rgba(8, 26, 52, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: #e0e6f3; /* softer, lighter text */
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.05) 0,
+      rgba(255, 255, 255, 0.05) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+    animation: moveStripes 8s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+input[type='text'],
+input[type='password'] {
+  padding: 1rem 1.2rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  color: #d0d8f9; /* lighter text on dark bg */
+  background-color: #1a243d; /* dark input bg */
+  box-shadow:
+    inset 0 0 10px rgba(0, 123, 255, 0.4);
+  transition: border-color 0.4s, box-shadow 0.4s;
+  z-index: 1;
+  position: relative;
+
+  &:focus {
+    border-color: #3399ff;
+    box-shadow:
+      0 0 12px 3px #3399ff,
+      inset 0 0 15px rgba(51, 153, 255, 0.8);
+    outline: none;
+    color: #fff;
+  }
+}
+
+label {
+  padding-right: 1.5rem;
+}
+
+button[type='submit'] {
+  padding: 1rem 0;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #3399ff, #0056b3);
+  color: #e0e6f3;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow:
+    0 0 20px #3399ff,
+    0 6px 20px rgba(0, 86, 179, 0.8);
+  transition: background 0.5s, box-shadow 0.5s, transform 0.2s;
+  z-index: 1;
+  position: relative;
+
+  &:hover {
+    background: linear-gradient(45deg, #0056b3, #3399ff);
+    box-shadow:
+      0 0 35px #3399ff,
+      0 10px 35px rgba(51, 153, 255, 1);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    box-shadow: none;
+  }
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
