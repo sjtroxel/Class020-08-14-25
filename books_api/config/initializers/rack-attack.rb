@@ -12,6 +12,7 @@ class Rack::Attack
   end
 
   throttle('authenticated_user', limit: 10, period: 1.minute) do |req|
-    req.env['warden'].user.id if req.env['warden'].user
+    user = req.env['warden']&.user
+    user&.id
   end
 end
